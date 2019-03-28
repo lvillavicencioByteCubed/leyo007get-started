@@ -5,12 +5,9 @@ jobs:
     steps:
     - checkout
     - run: |
-        docker login -u $DOCKER_USER -p $DOCKER_PASS
-
-        docker run -d leyo007/get-started:part2
         docker image ls
-      # build the application image
+        docker login -u $DOCKER_USER -p $DOCKER_PASS
+        docker run -d leyo007/get-started:part2
      - run: docker build -t leyo007/get-started:part3 .
      
-      # deploy the image
      - run: docker push leyo007/get-started:part3
