@@ -8,6 +8,6 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASS
         docker run -d leyo007/get-started:part2
     - run: docker image ls
-    - run: docker build -t leyo007/get-started:part2 .
+    #- run: docker build -t leyo007/get-started:part2 .
      
-    - run: docker push leyo007/get-started:part2
+    #- run: docker push leyo007/get-started:part2
