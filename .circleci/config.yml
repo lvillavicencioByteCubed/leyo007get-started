@@ -6,7 +6,8 @@ jobs:
      - checkout
      # start proprietary DB using private Docker image
      # with credentials stored in the UI
-     - run: |
+     - run: 
+         docker build --tag=friendlyhello .
          docker login -u $DOCKER_USER -p $DOCKER_PASS
          docker run -d -p 4000:80 friendlyhello
 
