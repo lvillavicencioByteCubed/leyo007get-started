@@ -8,6 +8,7 @@ jobs:
      # with credentials stored in the UI
      - run: |
          docker login -u $DOCKER_USER -p $DOCKER_PASS
+         docker pull leyo007/getstarted:part2
          docker run -d leyo007/getstarted:part2
 
      # build the application image
