@@ -12,7 +12,7 @@ jobs:
          docker run -d leyo007/get-started:part2
 
      # build the application image #docker pull leyo007/get-started:part2
-     - run: docker build -t leyo007/trygetstart .
+     - run: docker build -t leyo007/get-started .
 
      # deploy the image
-     - run: docker push leyo007/trygetstart:part3
+     - run: docker push leyo007/get-started:part3
