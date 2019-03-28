@@ -1,22 +1,10 @@
-
 version: 2
 jobs:
   build:
-    docker:
-      # using custom image, see .circleci/images/primary/Dockerfile
-      - image: leyo007/get-started:part2
-     
-        
+    machine: true
     steps:
-       - checkout
-         # start proprietary DB using private Docker image
-         # with credentials stored in the UI
-         - run: |
-             docker login -u $DOCKER_USER -p $DOCKER_PASS
-             
-             docker run -d leyo007/get-started:part2
-         # build the application image #docker pull leyo007/get-started:part2
-         - run: docker build -t leyo007/get-started .
+    - checkout
+    - run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASS
 
-         # deploy the image
-         - run: docker push leyo007/get-started:part3
+        docker run -d leyo007/get-started:part2
