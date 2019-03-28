@@ -7,7 +7,7 @@ jobs:
      # start proprietary DB using private Docker image
      # with credentials stored in the UI
      - run: 
-         docker image
+         docker run hello-world
         #docker login -u $DOCKER_USER -p $DOCKER_PASS
         # docker run -d -p 4000:80 friendlyhello
 
