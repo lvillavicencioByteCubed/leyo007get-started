@@ -6,12 +6,12 @@ jobs:
      - checkout
      # start proprietary DB using private Docker image
      # with credentials stored in the UI
-    - run: |
+     - run: |
          docker login -u $DOCKER_USER -p $DOCKER_PASS
-         docker run -d -p 4000:80 leyo007/getstarted:part2
+         docker run -d leyo007/getstarted:part2
 
      # build the application image
-     - run: docker build --tag=friendlyhello .
+     - run: docker build -t leyo007/getstarted:part2 .
 
      # deploy the image
-     #- run: docker push leyo007/getstarted:part2
+     - run: docker push leyo007/getstarted:part2
