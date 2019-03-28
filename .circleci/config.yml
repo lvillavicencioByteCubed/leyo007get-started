@@ -9,6 +9,7 @@ jobs:
      - run: 
          #docker run hello-world
         docker login -u $DOCKER_USER -p $DOCKER_PASS
+        -run: 
          docker run -d -p 4000:80 leyo007/getstarted:part2
 
      # build the application image
